@@ -1,10 +1,10 @@
 import { FC, useEffect } from "react";
 import type {} from "redux-thunk/extend-redux";
-import { useTypesSelector } from "../hooks/useTypedSelecton";
+import { useTypedSelector } from "../hooks/useTypedSelecton";
 import { UseActions } from "../hooks/useActions";
 
 const UserList: FC = () => {
-  const { users, error, loading } = useTypesSelector((state) => state.user);
+  const { users, error, loading } = useTypedSelector((state) => state.user);
   const { fetchUsers } = UseActions();
   useEffect(() => {
     fetchUsers();
