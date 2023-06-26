@@ -14,9 +14,6 @@ const TodoList: FC = () => {
 
   return (
     <>
-      {loading && <h1>Fetching...</h1>}
-      {error && <h1>{error}</h1>}
-
       {todos.map((todo) => (
         <li key={todo.id}>
           {todo.id} - {todo.title}
@@ -29,6 +26,7 @@ const TodoList: FC = () => {
             style={{
               border: p === page ? "2px solid green" : "1px solid lightgray",
               padding: 10,
+              cursor: "pointer"
             }}
           >
             {p}
